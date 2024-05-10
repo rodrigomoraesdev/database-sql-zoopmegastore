@@ -5,7 +5,7 @@
 <img src="./img/zoop.png" alt="Imagem 1" width="40%">
 </div>
 
-A empresa Zoop MegaStore decidiu fazer um grande investimento na BlackFriday com o objetivo de alavancar sua vendas.<br>
+A empresa Zoop MegaStore irá fazer um grande investimento na BlackFriday com o objetivo de alavancar sua vendas.<br>
 E com isso, me chamou para fazer pare do time de análise de dados da empresa, para traçar as estratégias e requisitar análise de dados para que possam tomar decisões baseadas em dados concretos.
 
 ## 👨🏻‍💻 Abrir Projeto:
