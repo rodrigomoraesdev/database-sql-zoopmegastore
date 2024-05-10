@@ -10,18 +10,22 @@ E com isso, me chamou para fazer pare do time de análise de dados da empresa, p
 
 ## 👨🏻‍💻 Abrir Projeto:
 
-Para realização desse projeto foi utilizado o [SQLiteOnline](https://sqliteonline.com/), então basta realizar o download do banco de dados: 'databasezoop.db' e abrir o mesmo na opção 'Open DB', conforme abaixo:
+Para realização desse projeto foi utilizado o [SQLiteOnline](https://sqliteonline.com/), então basta realizar o download do banco de dados: <br>
+[databasezoop.db](https://github.com/rodrigomoraesdev/database-sql-zoopmegastore/blob/main/databasezoop.db) e abrir o mesmo na opção 'Open DB', conforme abaixo:
 
 <div>
 <img src="./img/opendb.png" alt="Open DB" width="40%">
 </div>
+
+Disponibilizei também os comandos SQL caso deseje importar separadamente:
+[sql-databasezoop.sql](https://github.com/rodrigomoraesdev/database-sql-zoopmegastore/blob/main/sql-databasezoop.sql)
 
 ## 💡 Conhecendo o Banco de Dados
 
 Em nosso Banco de Dados temos um breve resumo das tabelas:
 
 💸 Vendas: Registra informações sobre cada venda, incluindo data, valor total e cliente.<br>
-📦 Produtos: Armazena detalhes de cada produto, como: nome, preço, categoria, marca, fornecedor e status de estoque.<br>
+📦 Produtos: Armazena detalhes de produtos, como: nome, preço, categoria, marca, fornecedor e status estoque.<br>
 🙋🏼‍♀️ Clientes: Contém informações pessoais dos clientes, como: nome, idade e endereço.<br>
 🗃️ Categorias: Define as categorias dos produtos.<br>
 🚚 Fornecedores: Lista os fornecedores dos produtos com seus contatos.<br>
@@ -53,11 +57,12 @@ Sendo assim, montamos a consulta abaixo que nos retorna o Ano com o Total de Ven
 
 - Resultado:
 <div align='Center'>
-<img src="./img/bf-consultavendas-completa.png" alt="total-vendas-completa" width="15%">
+<img src="./img/bf-consultavendas-completa.png" alt="total-vendas-completa" width="30%">
 </div>
 
 Para obter insights relevantes, refinamos essa consulta na tabela de vendas, contabilizando o número de vendas e agrupando os resultados por ano e mês.<br>
-Focamos nos meses correspondentes ao solicitado, além da Black Friday: novembro (11), dezembro (12) e janeiro (01).<br>
+Focamos nos meses correspondentes ao solicitado, além da Black Friday:<br>
+Novembro (11), Dezembro (12) e Janeiro (01).<br>
 
 Dessa forma, poderemos extrair informações valiosas sobre o desempenho das vendas durante esse período crucial:
 
@@ -74,9 +79,10 @@ ORDER BY Ano;
 
 - Resultado:
 <div align='Center'>
-<img src="./img/bf-consultavendas-periodointeresse.png" alt="total-vendas-período-interesse" width="15%">
+<img src="./img/bf-consultavendas-periodointeresse.png" alt="total-vendas-período-interesse" width="30%">
 </div>
 
+> [!NOTE]<br>
 > O projeto de análise de dados para a Zoop Megastore avançou para uma nova etapa.<br>
 > Fomos convidados para participar da reunião trimestral, cujo tema será a Black Friday.<br>
 > Vamos participar dessa reunião com o propósito de auxiliar na resposta a questões que possam surgir durante a elaboração das estratégias para a Black Friday deste ano.
@@ -89,7 +95,7 @@ A Pauta da reunião enviada foi:
 - A categoria de produtos da Black Friday;
 - E a performance das Black Friday anteriores e futuras.
 
-Em relação ao último tópico, não sabemos ainda como podemos montar uma consulta para ajudar a responder essa questão, <br>
+Em relação ao último tópico, não sabemos ainda como podemos montar uma consulta para ajudar nessa questão, <br>
 Sendo assim iremos nesse primeiro momento focar nos 2 primeiros tópicos, que entendo serem os principais no momento para adotar uma estrategia efetiva para a próxima Black Friday:
 
 - O papel dos fornecedores na Black Friday;
@@ -113,7 +119,7 @@ ORDER BY NomeFornecedor;
 - Resultado:
 
 <div align='Center'>
-<img src="./img/bf-papelfornecedores-qtdvendas.png" alt="Papel dos Fornecedores na Black Friday" width="15%">
+<img src="./img/bf-papelfornecedores-qtdvendas.png" alt="Papel dos Fornecedores na Black Friday" width="30%">
 </div>
 
 - A categoria de produtos da Black Friday;
@@ -137,9 +143,10 @@ ORDER BY AnoMes, Qtd_Vendas;
 - Resultado:
 
 <div align='Center'>
-<img src="./img/bf-categoriaprodutos-qtdvendas.png" alt="Categoria de Produtos da Black Friday" width="15%">
+<img src="./img/bf-categoriaprodutos-qtdvendas.png" alt="Categoria de Produtos da Black Friday" width="30%">
 </div>
 
+> [!NOTE]<br>
 > Com as consultas prontas, já estamos prontos para iniciar a reunião:
 
 <details><summary>🎧Transcrição Reunião:</summary>
@@ -169,7 +176,7 @@ ORDER BY QtdVendas DESC;
 
 - Resultado:
 
-<img src="./img/entrevista-answer1.png" alt="Entrevista Fornecedores com Maior QtdVenda" width="20%">
+<img src="./img/entrevista-answer1.png" alt="Entrevista Fornecedores com Maior QtdVenda" width="30%">
 
 `Rodrigo`: Na última Black Friday em 2022/11, quem vendeu mais foi a AstroSupply, com 1.830 vendas, e a HorizonDistributors, com 1.735 vendas.<br>
 
@@ -198,7 +205,7 @@ ORDER BY AnoMes, Qtd_Vendas DESC;
 
 - Resultado:
 
-<img src="./img/entrevista-answer2.png" alt="Entrevista Categoria de Produtos com Maior QtdVenda" width="20%">
+<img src="./img/entrevista-answer2.png" alt="Entrevista Categoria de Produtos com Maior QtdVenda" width="30%">
 
 `Rodrigo`: Olhando para 2022, temos cinco resultados para Novembro.<br>
 Vendemos mais nas categorias de Eletrônicos e Vestuário, sendo "Eletrônicos" com 2.808 vendas e "Vestuário" com 2.609 vendas.
@@ -238,7 +245,7 @@ FROM (
 
 - Resultado:
 
-<img src="./img/entrevista-answer3.png" alt="Entrevista Validação Total Registros" width="10%">
+<img src="./img/entrevista-answer3.png" alt="Entrevista Validação Total Registros" width="30%">
 
 Após selecionar a consulta e apertar "Run", é retornado o valor de 150.034 vendas.<br>
 Sendo assim, os dados estão atualizados, Mirla, pode ficar tranquila!
@@ -252,6 +259,8 @@ Até a próxima. Muito obrigada pelo seu tempo!<br>
 
 </details>
 <br>
+
+---
 
 Após a reunião ficamos responsáveis por enviar ao negócio, as informações de desempenho apenas do Fornecedor: NebulaNetworks.<br>
 Sendo assim, aproveitei o código que já havíamos construído para os Fornecedores, e modifiquei para trazer o AnoMes e a Quantidade de Vendas, isso apenas do Fornecedor NebulaNetworks:
@@ -272,7 +281,7 @@ Esse resultado acima, estamos falamos de 4 anos, ou seja 46 linhas de informaç�
 Como haviam informado anteriormente que as informações devem ser acessíveis aos profissionais da área de negócios, permitindo que eles executem suas próprias consultas e atualizem as informações conforme necessário.<br>
 Realizei a exportação desses dados como CSV,
 
-<img src="./img//csv-nebulanetworks.png" alt="Gráfico Detalhes QtdVendas NebulaNetworks" width="85%">
+<img src="./img//csv-nebulanetworks.png" alt="Gráfico Detalhes QtdVendas NebulaNetworks" width="100%">
 
 Além disso, pensei que seria interessante também o negócio conseguir visualmente comparar a NebulaNetwork com outros 2 Melhores Fornecedores.<br>
 Porém para ficar no mesmo padrão anterior, precisamos colocar cada Fornecedor como uma coluna, sendo assim aproveitei o código anterior onde declarei o operador OR para trazer os 3 Fornecedores em questão, assim como utilizei esse código como um sub-consulta, onde na consulta principal, para separar os Fornecedores em cada coluna, utilizamos o CASE, onde caso o Fornecedor for o que buscamos, ele irá trazer a Quantidade de Vendas:
@@ -297,7 +306,7 @@ FROM(
 
 ```
 
-<img src="./img/csv-nebulanetworks+top2.png" alt="Gráfico Detalhes QtdVendas NebulaNetworks" width="85%">
+<img src="./img/csv-nebulanetworks+top2.png" alt="Gráfico Detalhes QtdVendas NebulaNetworks" width="100%">
 
 Além disso também nesse mesmo formato e material, estarei enviando um Quadro Geral do Total de Vendas Geral,
 
@@ -309,10 +318,10 @@ Além disso também nesse mesmo formato e material, estarei enviando um Quadro G
  ORDER by AnoMes;
 ```
 
-<img src="./img/csv-quadrogeral.png" alt="Gráfico Detalhes QtdVendas NebulaNetworks" width="85%">
+<img src="./img/csv-quadrogeral.png" alt="Gráfico Detalhes QtdVendas NebulaNetworks" width="100%">
 
-> [!TIP] <br>
-> Os gráficos estão disponíveis no arquivo: 'analisegrafica.xlsx'
+> [!NOTE]<br>
+> Os gráficos estão disponíveis para download no arquivo: [analisegrafica.xlsx](https://github.com/rodrigomoraesdev/database-sql-zoopmegastore/blob/main/analisegrafica.xlsx)
 
 ## 📏 Métricas
 
@@ -343,7 +352,8 @@ FROM(
 
 ## 📊 Relatório Final
 
-Sendo assim, por último montei o Relatório Final, que foi enviado ao negócio: 'Relatório de Black Friday - Zoop.docx'<br>
+Sendo assim, por último montei o Relatório Final, que foi enviado ao negócio, você pode realizar o downland do mesmo:<br>
+[Relatório de Black Friday - Zoop.docx](https://github.com/rodrigomoraesdev/database-sql-zoopmegastore/blob/main/Relat%C3%B3rio%20de%20Black%20Friday%20-%20Zoop.docx)<br>
 Ele contém de forma simples e direta os resultados com dados e informações uteis para que eles possam tomas as decisões mais assertivas para próxima Black Friday.
 
 ---
