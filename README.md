@@ -5,8 +5,8 @@
 <img src="./img/zoop.png" alt="Imagem 1" width="40%">
 </div>
 
-A empresa Zoop MegaStore irá fazer um grande investimento na BlackFriday com o objetivo de alavancar sua vendas.<br>
-E com isso, me chamou para fazer pare do time de análise de dados da empresa, para traçar as estratégias e requisitar análise de dados para que possam tomar decisões baseadas em dados concretos.
+A Zoop MegaStore se prepara para a Black Friday com um grande investimento em análise de dados.<br>
+Com o objetivo de alavancar as vendas, a empresa formou uma equipe especializada, da qual faço parte, para traçar estratégias e tomar decisões baseadas em informações concretas.
 
 ## 👨🏻‍💻 Abrir Projeto:
 
@@ -20,6 +20,14 @@ Para realização desse projeto foi utilizado o [SQLiteOnline](https://sqliteonl
 Disponibilizei também os comandos SQL caso deseje importar separadamente:
 [sql-databasezoop.sql](https://github.com/rodrigomoraesdev/database-sql-zoopmegastore/blob/main/sql-databasezoop.sql)
 
+## 📝 Introdução
+
+> [!IMPORTANT]<br>
+> Nossa equipe foi designada para criar um relatório abrangente que analisará as vendas das últimas Black Fridays. <br>
+> Além disso, considerando o cenário geral de vendas da empresa, a equipe de negócios destacou que o mês relevante não se limita apenas à Black Friday, e sim: Novembro, Dezembro e Janeiro. <br>
+> A análise resultante deve ser acessível aos profissionais da área de negócios, permitindo que eles executem suas próprias consultas e atualizem as informações conforme necessário.<br>
+> O objetivo é fornecer uma visão completa, incluindo os meses que se acredita serem os de maior volume de vendas.
+
 ## 💡 Conhecendo o Banco de Dados
 
 Em nosso Banco de Dados temos um breve resumo das tabelas:
@@ -31,14 +39,6 @@ Em nosso Banco de Dados temos um breve resumo das tabelas:
 🚚 Fornecedores: Lista os fornecedores dos produtos com seus contatos.<br>
 🏷️ Marcas: Especifica as marcas dos produtos.<br>
 🧾 Itens_Venda: Relaciona produtos a vendas específicas e suas quantidades.<br>
-
-## 📝 Introdução
-
-> [!IMPORTANT]<br>
-> Nossa equipe foi designada para criar um relatório abrangente que analisará as vendas das últimas Black Fridays. <br>
-> Além disso, considerando o cenário geral de vendas da empresa, a equipe de negócios destacou que o mês relevante não se limita apenas à Black Friday, e sim: Novembro, Dezembro e Janeiro. <br>
-> A análise resultante deve ser acessível aos profissionais da área de negócios, permitindo que eles executem suas próprias consultas e atualizem as informações conforme necessário.<br>
-> O objetivo é fornecer uma visão completa, incluindo os meses que se acredita serem os de maior volume de vendas.
 
 ## ▶️ Desenvolvimento
 
