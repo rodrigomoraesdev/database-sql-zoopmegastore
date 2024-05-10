@@ -14,7 +14,7 @@ Para realização desse projeto foi utilizado o [SQLiteOnline](https://sqliteonl
 [databasezoop.db](https://github.com/rodrigomoraesdev/database-sql-zoopmegastore/blob/main/databasezoop.db) e abrir o mesmo na opção 'Open DB', conforme abaixo:
 
 <div>
-<img src="./img/opendb.png" alt="Open DB" width="40%">
+<img src="./img/opendb.png" alt="Open DB" width="80%">
 </div>
 
 Disponibilizei também os comandos SQL caso deseje importar separadamente:
@@ -68,11 +68,11 @@ Dessa forma, poderemos extrair informações valiosas sobre o desempenho das ven
 
 ```
 --Consulta Vendas - Período Interesse
-SELECT STRFTIME('%Y',data_venda) as Ano, STRFTIME('%m',data_venda) as Mes,
+SELECT STRFTIME('%Y',data_venda) as Ano, STRFTIME('%m',data_venda) AS Mes,
 COUNT(id_venda) AS TotalVendas
 FROM vendas
-where Mes = '01' OR Mes = '11' OR Mes = '12'
-GROUP by Ano, Mes
+WHERE Mes = '01' OR Mes = '11' OR Mes = '12'
+GROUP BY Ano, Mes
 ORDER BY Ano;
 
 ```
@@ -112,7 +112,7 @@ JOIN vendas v ON v.id_venda = iv.venda_id
 JOIN produtos p ON iv.produto_id = p.id_produto
 JOIN fornecedores f ON f.id_fornecedor = p.fornecedor_id
 where AnoMes LIKE '%/10%' OR AnoMes LIKE '%/11%' OR AnoMes LIKE '%/12%'
-GROUP By NomeFornecedor, "AnoMes"
+GROUP BY NomeFornecedor, "AnoMes"
 ORDER BY NomeFornecedor;
 ```
 
@@ -273,7 +273,7 @@ JOIN vendas v ON v.id_venda = iv.venda_id
 JOIN produtos p ON iv.produto_id = p.id_produto
 JOIN fornecedores f ON f.id_fornecedor = p.fornecedor_id
 WHERE f.nome = 'NebulaNetworks'
-GROUP By f.nome, "AnoMes"
+GROUP BY f.nome, "AnoMes"
 ORDER BY AnoMes, QtdVendas DESC;
 ```
 
@@ -314,8 +314,8 @@ Além disso também nesse mesmo formato e material, estarei enviando um Quadro G
  --Quadro Geral
  SELECT STRFTIME('%Y/%m', data_venda) AS AnoMes, COUNT(*) AS QtdVendas
  FROM vendas
- GROUP by AnoMes
- ORDER by AnoMes;
+ GROUP BY AnoMes
+ ORDER BY AnoMes;
 ```
 
 <img src="./img/csv-quadrogeral.png" alt="Gráfico Detalhes QtdVendas NebulaNetworks" width="100%">
@@ -332,15 +332,15 @@ Essa métrica pode ser utilizada para a equipe de negócio, alterando apenas o a
 ```
 WITH Media_Vendas_Anteriores AS (SELECT AVG(Qtd_Vendas) AS Media_Qtd_Vendas
 FROM (
-    SELECT COUNT(*) AS Qtd_Vendas, strftime('%Y', v.data_venda) AS Ano
+    SELECT COUNT(*) AS Qtd_Vendas, STRFTIME('%Y', v.data_venda) AS Ano
     FROM vendas v
-    WHERE strftime('%m', v.data_venda) = '11' AND Ano != '2022'
+    WHERE STRFTIME('%m', v.data_venda) = '11' AND Ano != '2022'
     GROUP BY Ano
 )), Vendas_Atual AS (SELECT Qtd_Vendas AS Qtd_Vendas_Atual
 FROM(
-    SELECT COUNT(*) AS Qtd_Vendas, strftime('%Y', v.data_venda) AS Ano
+    SELECT COUNT(*) AS Qtd_Vendas, STRFTIME('%Y', v.data_venda) AS Ano
     FROM vendas v
-    WHERE strftime('%m', v.data_venda) = '11' AND Ano = '2022'
+    WHERE STRFTIME('%m', v.data_venda) = '11' AND Ano = '2022'
     GROUP BY Ano
     ))
     SELECT
@@ -352,8 +352,7 @@ FROM(
 
 ## 📊 Relatório Final
 
-Sendo assim, por último montei o Relatório Final, que foi enviado ao negócio, você pode realizar o downland do mesmo:<br>
-[Relatório de Black Friday - Zoop.docx](https://github.com/rodrigomoraesdev/database-sql-zoopmegastore/blob/main/Relat%C3%B3rio%20de%20Black%20Friday%20-%20Zoop.docx)<br>
+Sendo assim, por último montei o Relatório Final, que foi enviado ao negócio, você pode realizar o downland do mesmo: [Relatório de Black Friday - Zoop.docx](https://github.com/rodrigomoraesdev/database-sql-zoopmegastore/blob/main/Relat%C3%B3rio%20de%20Black%20Friday%20-%20Zoop.docx)<br>
 Ele contém de forma simples e direta os resultados com dados e informações uteis para que eles possam tomas as decisões mais assertivas para próxima Black Friday.
 
 ---
